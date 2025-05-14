@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        <form action="{{ url_for('download') }}" method="POST" id="download-form">
+            <div class="input-group">
+                <input type="text" name="url" id="url" placeholder="Paste YouTube URL here" required>
+                <button type="submit">Download</button>
+            </div>
+        </form>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Downloading...</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
